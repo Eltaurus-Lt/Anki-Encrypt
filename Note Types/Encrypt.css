@@ -1,0 +1,42 @@
+.card {
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    max-width: 20em;
+    margin: 20px auto;
+}
+
+.acc {
+    font-size: 2rem;
+}
+
+.hint {
+    height: 1em;
+    margin: .5em 0;
+}
+.hint:not(:hover):not(:active):not(:empty) {
+    color: transparent;
+    background: gray;
+    opacity: .25;
+}
+
+#typeans {
+    font-size: 1em;
+}
+
+code#typeans {
+    display: block;
+    padding: .5em;
+}
+.card.correct #typeans {
+    background: #afa;
+}
+.card.wrong #typeans {
+    background: #faa;
+}
+
+.hide-answer #typeans {
+    visibility: hidden;
+}

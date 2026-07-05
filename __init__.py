@@ -1,11 +1,12 @@
 # This script is part of the Encrypt Add-on for Anki.
 # Source: https://github.com/Eltaurus-Lt/Anki-Encrypt
 # 
-# Copyright © 2025 Eltaurus
+# Copyright © 2025-2026 Eltaurus
 # Contact: 
 #     Email: Eltaurus@inbox.lt
 #     GitHub: github.com/Eltaurus-Lt
 #     Anki Forums: forums.ankiweb.net/u/Eltaurus
+#     about: https://eltaurus-lt.github.io/about/me.html
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,6 +27,7 @@ from aqt import dialogs, mw, gui_hooks
 from aqt.utils import tooltip
 from aqt.qt import *
 import hashlib
+from . import Manage_Note_Types
 
 addon_path = os.path.dirname(__file__)
 
