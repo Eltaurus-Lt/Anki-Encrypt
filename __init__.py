@@ -81,7 +81,8 @@ def Encrypt(editor):
     hashstring = hashlib.sha256(salt + password.encode('utf-8')).hexdigest()
 
     note[field] = salt.hex() + hashstring
-    mw.col.update_note(note)
+    # if note.id != 0:
+    #     mw.col.update_note(note)
     editor.loadNoteKeepingFocus()
 
 
