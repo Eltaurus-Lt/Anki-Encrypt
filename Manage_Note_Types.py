@@ -98,8 +98,9 @@ orig_get_stock_notetypes = stdmodels.get_stock_notetypes
 
 def patched_get_stock_notetypes(*args, **kwargs):
     models = orig_get_stock_notetypes(*args, **kwargs)
-    models.insert(4, ("Encrypt (Lτ)", encrypt_note_type))
-    # condition to insert right after Basic (Lτ) if exists
+    model_names = [model[0] for model in models]
+    encrypt_index = model_names.index('Basic (Lτ)')+1 if "Basic (Lτ)" in model_names else 4
+    models.insert(encrypt_index, ("Encrypt (Lτ)", encrypt_note_type))
     return models
 
 stdmodels.get_stock_notetypes = patched_get_stock_notetypes
