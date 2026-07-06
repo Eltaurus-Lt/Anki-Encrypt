@@ -8,7 +8,7 @@
     margin: 20px auto;
 }
 
-.acc {
+.Q {
     font-size: 2rem;
 }
 
@@ -25,19 +25,12 @@
 #typeans {
     font-size: 1em;
     line-height: normal;
+    width: 100%;
 }
 
-code#typeans {
-    display: block;
-    padding: .5em;
-}
-.card.correct #typeans {
+#typeans.correct {
     background: #afa;
 }
-.card.wrong #typeans {
+#typeans.wrong {
     background: #faa;
-}
-
-.hide-answer #typeans {
-    visibility: hidden;
 }

@@ -58,30 +58,22 @@ def encrypt_note_type(col):
     noteType = mm.new(noteTypeName)
 
     # Fields
-    mm.addField(noteType, mm.newField("Account"))
+    mm.addField(noteType, mm.newField("Identifier"))
     mm.addField(noteType, mm.newField("Password (Encrypted)"))
     mm.addField(noteType, mm.newField("hint"))
 
     # Card Type
     cardType = mm.newTemplate("Password test")
     cardType["qfmt"] = (
-                        '<div class="acc">\n'
-                        '  {{Account}}\n'
-                        '</div>\n'
-                        '\n'
-                        '<div class="hint">{{hint}}</div>\n'
-                        '\n'
-                        '{{type:Password (Encrypted)}}\n'
-                        '\n'
-                        '<script>\n'
-                        '  document.getElementById("typeans").setAttribute("type","password")\n'
-                        '</script>'
+                        f'{load("Note Types/Encrypt (front).html")}'
+                        f'{insertJS("HashingFunciton")}'
+                        f'{insertJS("AnswerCheck")}'
+                        f'{insertJS("Typing")}'
                        )
     cardType["afmt"] = (
-                        '<div class="hide-answer">\n'
-                        '  {{FrontSide}}\n'
-                        '</div>\n'
-                        f'{insertJS("CheckAnswer")}'
+                        f'{load("Note Types/Encrypt (back).html")}'
+                        f'{insertJS("CheckDisplay")}'
+                        f'{insertJS("AWfocusHandler")}'
                        )
     noteType["css"] = (f'{load("Note Types/Encrypt.css")}')
     mm.addTemplate(noteType, cardType)
