@@ -13,8 +13,9 @@
 }
 
 .hint {
-    height: 1em;
     margin: .5em 0;
+    height: 1em;
+    line-height: normal;
 }
 .hint:not(:hover):not(:active):not(:empty) {
     color: transparent;
@@ -26,6 +27,8 @@
     font-size: 1em;
     line-height: normal;
     width: 100%;
+    -webkit-text-security: disc;
+    text-security: disc;
 }
 
 #typeans.correct {
